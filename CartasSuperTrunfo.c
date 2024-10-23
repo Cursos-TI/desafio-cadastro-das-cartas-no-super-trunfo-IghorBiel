@@ -4,10 +4,10 @@
 #define CIDADES_POR_ESTADO 4
 
 typedef struct {
-    char codigo[4]; // Ex: A01, B02
+    char codigo[4];
     int populacao;
-    float area; // em km²
-    float pib; // em milhões de USD
+    float area; 
+    float pib; 
     int num_pontos_turistico;
 } Carta;
 
@@ -16,10 +16,10 @@ int main() {
     
     for (char estado = 'A'; estado < 'A' + NUM_ESTADOS; estado++) {
         for (int cidade = 0; cidade < CIDADES_POR_ESTADO; cidade++) {
-            // Gerando o código da carta
+            
             sprintf(cartas[estado - 'A'][cidade].codigo, "%c%02d", estado, cidade + 1);
 
-            // Lendo os dados da carta
+            
             printf("Cadastro da carta para %s:\n", cartas[estado - 'A'][cidade].codigo);
             printf("População: ");
             scanf("%d", &cartas[estado - 'A'][cidade].populacao);
@@ -33,7 +33,7 @@ int main() {
         }
     }
 
-    // Exibindo os dados cadastrados
+    
     printf("Dados cadastrados:\n");
     for (char estado = 'A'; estado < 'A' + NUM_ESTADOS; estado++) {
         for (int cidade = 0; cidade < CIDADES_POR_ESTADO; cidade++) {
